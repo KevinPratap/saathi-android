@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Saathi Senior WCAG AAA Palette -->
+    <color name="saathi_primary">#FF9800</color>
+    <color name="saathi_primary_dark">#F57C00</color>
+    <color name="saathi_accent">#FF5722</color>
+
+    <!-- Alert and Warning Colors -->
+    <color name="alert_red">#D32F2F</color>
+    <color name="alert_red_dark">#B71C1C</color>
+    <color name="alert_yellow_card">#FFF8E1</color>
+    <color name="alert_yellow_button">#FFD54F</color>
+
+    <!-- Action Colors -->
+    <color name="call_family_blue">#1565C0</color>
+    <color name="text_dark">#1A1A1A</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="scrim_black">#D1000000</color>
+</resources>
