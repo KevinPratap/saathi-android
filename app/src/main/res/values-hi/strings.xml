@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">साथी</string>
+    <string name="accessibility_description">साथी आपकी स्क्रीन पर नज़र रखता है ताकि आपको धोखाधड़ी से बचाया जा सके।</string>
+    <string name="protection_active">साथी आपकी सुरक्षा कर रहा है</string>
+    <string name="grant_permission">Permission दें</string>
+    <string name="open_settings">Settings खोलें</string>
+</resources>

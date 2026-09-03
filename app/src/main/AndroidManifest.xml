@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.saathi.safety">
 
-    <!-- Permissions for Anti-Fraud Protection, Overlays, and Background Survival -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
-        android:name=".SaathiApplication"
         android:allowBackup="false"
-        android:icon="@android:drawable/ic_dialog_alert"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@android:drawable/ic_dialog_alert"
         android:supportsRtl="true"
         android:theme="@style/Theme.Saathi">
 
-        <!-- System-Bound Accessibility Service -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".service.SaathiAccessibilityService"
-            android:exported="true"
-            android:label="@string/accessibility_service_label"
+            android:exported="false"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
@@ -33,46 +34,10 @@
                 android:resource="@xml/accessibility_service_config" />
         </service>
 
-        <!-- Isolated Out-of-Process Watchdog Daemon (:watchdog) -->
         <service
-            android:name=".watchdog.WatchdogService"
-            android:enabled="true"
+            android:name=".service.SaathiForegroundService"
             android:exported="false"
-            android:foregroundServiceType="specialUse"
-            android:process=":watchdog" />
-
-        <!-- 15-Minute Periodic Health Job Service -->
-        <service
-            android:name=".watchdog.WatchdogJobService"
-            android:enabled="true"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:process=":watchdog" />
-
-        <!-- Boot & App Update Receiver -->
-        <receiver
-            android:name=".watchdog.BootReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
-
-        <!-- Reactive Ping & Screen State Receiver -->
-        <receiver
-            android:name=".watchdog.WatchdogPingReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-            </intent-filter>
-        </receiver>
+            android:foregroundServiceType="dataSync" />
 
     </application>
-
 </manifest>

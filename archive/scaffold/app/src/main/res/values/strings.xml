@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Saathi</string>
+    <string name="accessibility_service_label">Saathi Senior Safety Guardian</string>
+    <string name="accessibility_service_description">Saathi protects elderly users from digital scams and financial fraud in real-time using on-device security checks.</string>
+
+    <!-- Alert Strings: Hindi & English -->
+    <string name="alert_title_otp_hi">रुकिए! सावधान (ओटीपी खतरा)</string>
+    <string name="alert_title_otp_en">Warning: Secret OTP Request</string>
+    <string name="alert_msg_otp_hi">यह स्क्रीन आपसे आपका बैंक ओटीपी या गुप्त कोड मांग रही है। किसी को यह कोड कभी न बताएं!</string>
+    <string name="alert_msg_otp_en">This screen is requesting your confidential One-Time Password. Never share this code with anyone!</string>
+
+    <string name="alert_title_bank_hi">सावधान: बैंक खाता सस्पेंड चेतावनी</string>
+    <string name="alert_title_bank_en">Warning: Fake Bank/KYC Suspension</string>
+    <string name="alert_msg_bank_hi">धोखेबाज बैंक के नाम पर खाता बंद होने का डर दिखा रहे हैं। किसी अनजान नंबर पर कॉल न करें!</string>
+    <string name="alert_msg_bank_en">Scammers are threatening account suspension. Do not transfer funds or call unverified phone numbers!</string>
+
+    <string name="btn_hold_to_dismiss">🛡️ समझ गया — 3 सेकंड दबाए रखें</string>
+    <string name="btn_call_family">📞 परिवार को कॉल करें</string>
+</resources>
