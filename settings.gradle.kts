@@ -1,8 +1,17 @@
-plugins {
-    id("com.android.application") version "8.2.0" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.20" apply false
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
 
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
-}
+rootProject.name = "Saathi"
+include(":app")

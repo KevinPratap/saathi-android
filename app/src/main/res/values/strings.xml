@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Saathi</string>
-    <string name="accessibility_description">Saathi monitors your screen to protect you from scams and fraud.</string>
-    <string name="protection_active">Saathi is protecting you</string>
-    <string name="grant_permission">Grant Permission</string>
-    <string name="open_settings">Open Settings</string>
+    <string name="accessibility_service_label">Saathi Senior Safety Guardian</string>
+    <string name="accessibility_service_description">Saathi protects elderly users from digital scams and financial fraud in real-time using on-device security checks.</string>
+
+    <string name="greeting_hi">नमस्ते! मैं साथी हूँ</string>
+    <string name="greeting_sub">आपका सुरक्षित साथी • Always Protecting You</string>
+    
+    <string name="status_active_title">सुरक्षा पूरी तरह चालू है</string>
+    <string name="status_active_sub">Saathi is actively scanning and protecting your screen</string>
+
+    <string name="status_inactive_title">साथी की सुरक्षा चालू करें</string>
+    <string name="status_inactive_sub">धोखेबाजों से बचने के लिए 1 बटन दबाकर अनुमति दें</string>
+    <string name="btn_enable_settings">यहाँ दबाएं और साथी चालू करें ➔</string>
+
+    <string name="voice_tap_prompt_hi">बोलने के लिए यहाँ दबाएं</string>
+    <string name="voice_tap_prompt_en">Tap and speak what you need</string>
+
+    <string name="quick_help_header">सुझाव • COMMON ASSISTANCE</string>
+    <string name="help_whatsapp_title">WhatsApp पर आवाज़ कैसे भेजें?</string>
+    <string name="help_whatsapp_sub">आवाज़ का संदेश भेजना सीखें (Learn voice notes)</string>
+
+    <string name="help_bill_title">बिजली या पानी का बिल कैसे भरें?</string>
+    <string name="help_bill_sub">PhonePe से सुरक्षित बिल भुगतान सीखें</string>
+
+    <string name="help_test_scam_title">⚠️ फ्रॉड मैसेज रोककर देखें (Test Alert)</string>
+    <string name="help_test_scam_sub">दबाकर देखें कि साथी फ्रॉड को कैसे रोकता है</string>
+
+    <string name="btn_call_family_large">📞 परिवार को कॉल करें (Call Family)</string>
+
+    <!-- Alert Strings: Hindi & English -->
+    <string name="alert_title_otp_hi">रुकिए! सावधान (ओटीपी खतरा)</string>
+    <string name="alert_title_otp_en">Warning: Secret OTP Request</string>
+    <string name="alert_msg_otp_hi">यह स्क्रीन आपसे आपका बैंक ओटीपी या गुप्त कोड मांग रही है। किसी को यह कोड कभी न बताएं!</string>
+    <string name="alert_msg_otp_en">This screen is requesting your confidential One-Time Password. Never share this code with anyone!</string>
+
+    <string name="alert_title_bank_hi">सावधान: बैंक खाता सस्पेंड चेतावनी</string>
+    <string name="alert_title_bank_en">Warning: Fake Bank/KYC Suspension</string>
+    <string name="alert_msg_bank_hi">धोखेबाज बैंक के नाम पर खाता बंद होने का डर दिखा रहे हैं। किसी अनजान नंबर पर कॉल न करें!</string>
+    <string name="alert_msg_bank_en">Scammers are threatening account suspension. Do not transfer funds or call unverified phone numbers!</string>
+
+    <string name="btn_hold_to_dismiss">🛡️ समझ गया — 3 सेकंड दबाए रखें</string>
+    <string name="btn_call_family">📞 परिवार को कॉल करें</string>
 </resources>
