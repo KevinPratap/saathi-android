@@ -1,58 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/scrim_black"
+    android:background="@color/scrim_dark"
     android:padding="24dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/alert_yellow_card"
-        android:elevation="16dp"
+        android:background="@drawable/bg_card_raised"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:elevation="16dp">
+
+        <!-- Header with Warning Badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_alert_triangle"
+                android:contentDescription="Warning" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/threat_alert_header"
+                android:textColor="@color/saathi_ruby"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/modalTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/alert_title_otp_hi"
-            android:textColor="@color/alert_red"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:text="@string/threat_alert_title_otp"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="2dp" />
 
         <TextView
             android:id="@+id/modalMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/alert_msg_otp_hi"
-            android:textColor="@color/text_dark"
-            android:textSize="20sp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/threat_alert_msg_otp"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4dp" />
 
-        <Button
+        <!-- 3-Second Friction Hold Dismiss Button -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHoldToDismiss"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/alert_yellow_button"
-            android:text="@string/btn_hold_to_dismiss"
-            android:textColor="@color/alert_red_dark"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="@string/threat_btn_hold_dismiss"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            app:backgroundTint="@color/saathi_ruby_dark"
+            app:cornerRadius="16dp" />
 
-        <Button
+        <!-- Emergency Contact Action -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCallFamily"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/call_family_blue"
-            android:text="@string/btn_call_family"
-            android:textColor="@color/text_white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/threat_btn_call_trusted"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            app:strokeColor="@color/saathi_border_highlight"
+            app:strokeWidth="1dp"
+            app:backgroundTint="@color/saathi_surface"
+            app:cornerRadius="16dp" />
 
     </LinearLayout>
 

@@ -9,13 +9,16 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:paddingHorizontal="24dp"
+            android:paddingTop="36dp"
+            android:paddingBottom="28dp">
 
             <!-- Top Header & Branding -->
             <LinearLayout
@@ -23,59 +26,59 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="28dp">
 
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/ic_shield_24"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_shield_emerald"
                     android:contentDescription="@string/app_name" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="14dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/greeting_hi"
-                        android:textColor="@color/text_dark"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:text="@string/brand_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.02" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/greeting_sub"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
+                        android:text="@string/brand_tagline"
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/btnSettings"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_shield_24"
-                    android:tint="@color/saathi_primary_dark"
-                    android:contentDescription="@string/accessibility_service_label"
-                    android:padding="8dp" />
+                    android:src="@drawable/ic_shield_emerald"
+                    android:tint="@color/saathi_primary"
+                    android:contentDescription="Settings"
+                    android:padding="10dp" />
             </LinearLayout>
 
-            <!-- Dynamic Protection Status Card -->
+            <!-- Dynamic Executive Shield Status Card -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardProtectionStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                app:cardBackgroundColor="@color/saathi_safe_light"
-                app:strokeColor="@color/saathi_safe"
-                app:strokeWidth="2dp"
-                app:cardCornerRadius="24dp"
+                android:layout_marginBottom="36dp"
+                app:cardBackgroundColor="@color/saathi_emerald_bg"
+                app:strokeColor="@color/saathi_emerald_border"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -92,9 +95,9 @@
 
                         <ImageView
                             android:id="@+id/imgStatusIcon"
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:src="@drawable/ic_shield_24"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_shield_emerald"
                             android:contentDescription="Status" />
 
                         <TextView
@@ -103,10 +106,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginStart="12dp"
-                            android:text="@string/status_active_title"
-                            android:textColor="@color/saathi_safe_dark"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:text="@string/status_shield_active"
+                            android:textColor="@color/saathi_emerald"
+                            android:textSize="17sp"
+                            android:fontFamily="sans-serif-medium" />
                     </LinearLayout>
 
                     <TextView
@@ -114,93 +117,93 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="@string/status_active_sub"
+                        android:text="@string/status_shield_active_desc"
                         android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="2dp" />
 
                     <!-- Action Button (Shown only if permission needed) -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnEnableSettings"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="52dp"
                         android:layout_marginTop="16dp"
                         android:visibility="gone"
-                        android:text="@string/btn_enable_settings"
+                        android:text="@string/btn_activate_shield"
                         android:textColor="@color/text_white"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textStyle="bold"
-                        app:backgroundTint="@color/saathi_primary_dark"
-                        app:cornerRadius="16dp" />
+                        app:backgroundTint="@color/saathi_primary"
+                        app:cornerRadius="14dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Hero Voice Assistance Button -->
+            <!-- Hero Luminous AI Orb Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="28dp">
+                android:layout_marginBottom="40dp">
 
-                <!-- Outer Concentric Ripple -->
+                <!-- Glowing Ambient Layer Container -->
                 <FrameLayout
-                    android:layout_width="170dp"
-                    android:layout_height="170dp">
+                    android:layout_width="160dp"
+                    android:layout_height="160dp">
 
                     <View
                         android:id="@+id/viewVoiceRipple"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/bg_voice_mic_outer" />
+                        android:background="@drawable/bg_hero_orb_halo" />
 
                     <ImageButton
                         android:id="@+id/btnVoiceAssistant"
-                        android:layout_width="134dp"
-                        android:layout_height="134dp"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/bg_voice_mic"
-                        android:src="@drawable/ic_mic_24"
+                        android:background="@drawable/bg_hero_orb"
+                        android:src="@drawable/ic_mic_white"
                         android:scaleType="centerInside"
-                        android:elevation="8dp"
-                        android:contentDescription="@string/voice_tap_prompt_hi" />
+                        android:elevation="12dp"
+                        android:contentDescription="@string/voice_prompt_title" />
                 </FrameLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/voice_tap_prompt_hi"
-                    android:textColor="@color/text_dark"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="20dp"
+                    android:text="@string/voice_prompt_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif-medium" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/voice_tap_prompt_en"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="15sp" />
+                    android:text="@string/voice_prompt_subtitle"
+                    android:textColor="@color/text_muted"
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Quick Assistance Cards Header -->
+            <!-- Intelligent Workflows Section Header -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/quick_help_header"
-                android:textColor="@color/text_subtle"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.05"
-                android:layout_marginBottom="12dp" />
+                android:text="@string/section_guided_workflows"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="14dp" />
 
-            <!-- WhatsApp Voice Note Tutorial Card -->
+            <!-- WhatsApp Voice Note Tutorial Tile -->
             <LinearLayout
                 android:id="@+id/cardWhatsAppHelp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_quick_chip"
+                android:background="@drawable/bg_card_obsidian"
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
@@ -208,49 +211,54 @@
                 android:padding="16dp"
                 android:layout_marginBottom="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🎙️"
-                    android:textSize="28sp" />
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_badge_blue">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_chat_bubble" />
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="14dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/help_whatsapp_title"
-                        android:textColor="@color/text_dark"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                        android:text="@string/guide_whatsapp_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/help_whatsapp_sub"
-                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/guide_whatsapp_desc"
+                        android:textColor="@color/text_muted"
                         android:textSize="13sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="➔"
-                    android:textColor="@color/text_subtle"
-                    android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
-            <!-- Bill Pay Tutorial Card -->
+            <!-- Bill Pay Guide Tile -->
             <LinearLayout
                 android:id="@+id/cardBillPayHelp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_quick_chip"
+                android:background="@drawable/bg_card_obsidian"
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
@@ -258,107 +266,128 @@
                 android:padding="16dp"
                 android:layout_marginBottom="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⚡"
-                    android:textSize="28sp" />
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_badge_amber">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_lightning" />
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="14dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/help_bill_title"
-                        android:textColor="@color/text_dark"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                        android:text="@string/guide_billpay_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/help_bill_sub"
-                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/guide_billpay_desc"
+                        android:textColor="@color/text_muted"
                         android:textSize="13sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="➔"
-                    android:textColor="@color/text_subtle"
-                    android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
-            <!-- Test Scam Alert Card -->
+            <!-- Test Scam Alert Tile -->
             <LinearLayout
                 android:id="@+id/cardTestScamAlert"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_quick_chip"
+                android:background="@drawable/bg_card_obsidian"
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="16dp"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="28dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⚠️"
-                    android:textSize="28sp" />
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_badge_red">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_alert_triangle" />
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="14dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/help_test_scam_title"
-                        android:textColor="@color/alert_red"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                        android:text="@string/guide_sim_alert_title"
+                        android:textColor="@color/saathi_ruby"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/help_test_scam_sub"
-                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/guide_sim_alert_desc"
+                        android:textColor="@color/text_muted"
                         android:textSize="13sp" />
                 </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right" />
+            </LinearLayout>
+
+            <!-- Bottom Emergency Contact Button -->
+            <LinearLayout
+                android:id="@+id/btnCallFamily"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_btn_emergency"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_phone_call" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="➔"
-                    android:textColor="@color/text_subtle"
-                    android:textSize="18sp" />
+                    android:layout_marginStart="10dp"
+                    android:text="@string/btn_emergency_call"
+                    android:textColor="@color/saathi_emerald"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-medium" />
             </LinearLayout>
-
-            <!-- Bottom Emergency Family Call Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCallFamily"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="@string/btn_call_family_large"
-                android:textColor="@color/call_family_green"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:strokeColor="@color/call_family_green"
-                app:strokeWidth="2dp"
-                app:backgroundTint="@color/saathi_surface"
-                app:cornerRadius="20dp"
-                android:layout_marginBottom="16dp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

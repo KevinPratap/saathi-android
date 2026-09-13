@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Saathi Primary Theme Tokens -->
-    <color name="saathi_primary">#FF9800</color>
-    <color name="saathi_primary_dark">#F57C00</color>
-    <color name="saathi_accent">#FF5722</color>
+    <!-- Deep Obsidian Dark Surface Palette -->
+    <color name="saathi_bg">#0B0F17</color>
+    <color name="saathi_surface">#121824</color>
+    <color name="saathi_surface_raised">#161F30</color>
+    <color name="saathi_border">#222D42</color>
+    <color name="saathi_border_highlight">#334155</color>
 
-    <!-- Calming Forest Safe Green -->
-    <color name="saathi_safe">#00897B</color>
-    <color name="saathi_safe_dark">#00695C</color>
-    <color name="saathi_safe_light">#E0F2F1</color>
+    <!-- Executive Brand Primaries (Electric Sapphire to Violet) -->
+    <color name="saathi_primary">#3B82F6</color>
+    <color name="saathi_primary_dark">#2563EB</color>
+    <color name="saathi_accent">#8B5CF6</color>
 
-    <!-- High-Friction Alert Red -->
-    <color name="alert_red">#D32F2F</color>
-    <color name="alert_red_dark">#B71C1C</color>
-    <color name="alert_yellow_card">#FFF8E1</color>
-    <color name="alert_yellow_button">#FFD54F</color>
+    <!-- Cyber Emerald (Verified Protection Active) -->
+    <color name="saathi_emerald">#10B981</color>
+    <color name="saathi_emerald_dark">#059669</color>
+    <color name="saathi_emerald_bg">#0D2821</color>
+    <color name="saathi_emerald_border">#1D4D40</color>
 
-    <!-- Backgrounds & Surfaces (Geriatric Low Eye-Strain) -->
-    <color name="saathi_bg">#F8F9FA</color>
-    <color name="saathi_surface">#FFFFFF</color>
-    <color name="saathi_border">#E5E7EB</color>
+    <!-- Alert / Threat Palette -->
+    <color name="saathi_ruby">#EF4444</color>
+    <color name="saathi_ruby_dark">#DC2626</color>
+    <color name="saathi_ruby_bg">#2A1215</color>
+    <color name="saathi_amber">#F59E0B</color>
+    <color name="saathi_amber_bg">#291D0E</color>
 
-    <!-- Text Typography (WCAG AAA High Contrast) -->
-    <color name="text_dark">#111827</color>
-    <color name="text_secondary">#4B5563</color>
-    <color name="text_subtle">#9CA3AF</color>
+    <!-- Typography Tokens (High Contrast Minimalist) -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_muted">#64748B</color>
     <color name="text_white">#FFFFFF</color>
 
-    <!-- Actions -->
-    <color name="call_family_blue">#1565C0</color>
-    <color name="call_family_green">#2E7D32</color>
-    <color name="scrim_black">#D1000000</color>
+    <!-- Backward Compatibility Aliases -->
+    <color name="alert_yellow_card">#161F30</color>
+    <color name="alert_yellow_button">#EF4444</color>
+    <color name="alert_red">#EF4444</color>
+    <color name="alert_red_dark">#DC2626</color>
+    <color name="text_dark">#F8FAFC</color>
+    <color name="call_family_blue">#3B82F6</color>
+    <color name="call_family_green">#10B981</color>
+    <color name="scrim_black">#E60B0F17</color>
+    <color name="scrim_dark">#E60B0F17</color>
 </resources>

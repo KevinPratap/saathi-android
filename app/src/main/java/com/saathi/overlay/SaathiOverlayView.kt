@@ -24,53 +24,53 @@ class SaathiOverlayView @JvmOverloads constructor(
     private var isHolding = false
 
     private val cardPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#FFF8E1") // High-contrast warm amber
+        color = Color.parseColor("#121824") // Deep Obsidian Slate
         style = Paint.Style.FILL
     }
 
     private val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#D32F2F") // Deep red warning border
+        color = Color.parseColor("#EF4444") // Sleek hazard crimson
         style = Paint.Style.STROKE
-        strokeWidth = 6f * resources.displayMetrics.density
+        strokeWidth = 2f * resources.displayMetrics.density
     }
 
     private val textHeaderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#D32F2F")
-        textSize = 24f * resources.displayMetrics.scaledDensity
+        color = Color.parseColor("#F8FAFC")
+        textSize = 20f * resources.displayMetrics.scaledDensity
         typeface = Typeface.DEFAULT_BOLD
     }
 
     private val textBodyPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#1A1A1A")
-        textSize = 18f * resources.displayMetrics.scaledDensity
+        color = Color.parseColor("#94A3B8")
+        textSize = 15f * resources.displayMetrics.scaledDensity
     }
 
     private val btnHoldPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#FFD54F")
+        color = Color.parseColor("#DC2626")
         style = Paint.Style.FILL
     }
 
     private val btnCallFamilyPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#1565C0")
+        color = Color.parseColor("#0D201A")
         style = Paint.Style.FILL
     }
 
     private val btnTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#B71C1C")
-        textSize = 18f * resources.displayMetrics.scaledDensity
+        color = Color.WHITE
+        textSize = 16f * resources.displayMetrics.scaledDensity
         typeface = Typeface.DEFAULT_BOLD
         textAlign = Paint.Align.CENTER
     }
 
     private val btnCallTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.WHITE
-        textSize = 18f * resources.displayMetrics.scaledDensity
+        color = Color.parseColor("#10B981")
+        textSize = 15f * resources.displayMetrics.scaledDensity
         typeface = Typeface.DEFAULT_BOLD
         textAlign = Paint.Align.CENTER
     }
 
     private val holdProgressPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#4CAF50")
+        color = Color.parseColor("#EF4444")
         style = Paint.Style.FILL
     }
 
@@ -88,33 +88,32 @@ class SaathiOverlayView @JvmOverloads constructor(
         val mode = currentMode ?: return
 
         when (mode) {
-            is OverlayMode.AmbientBanner -> drawAmbientBanner(canvas, mode)
+            is OverlayMode.AmbientBanner -> drawWarningBanner(canvas, mode)
             is OverlayMode.InterventionModal -> drawInterventionModal(canvas, mode)
         }
     }
 
-    private fun drawAmbientBanner(canvas: Canvas, mode: OverlayMode.AmbientBanner) {
+    private fun drawWarningBanner(canvas: Canvas, mode: OverlayMode.AmbientBanner) {
         val density = resources.displayMetrics.density
-        val cardRect = RectF(16f * density, 48f * density, width - 16f * density, 180f * density)
-        canvas.drawRoundRect(cardRect, 16f * density, 16f * density, cardPaint)
-        canvas.drawRoundRect(cardRect, 16f * density, 16f * density, borderPaint)
+        val cardRect = RectF(16f * density, 48f * density, width - 16f * density, 140f * density)
+        canvas.drawRoundRect(cardRect, 18f * density, 18f * density, cardPaint)
+        canvas.drawRoundRect(cardRect, 18f * density, 18f * density, borderPaint)
 
-        canvas.drawText("⚠️ ${mode.alertData.titleDevanagari}", cardRect.left + 16f * density, cardRect.top + 36f * density, textHeaderPaint)
-        canvas.drawText(mode.alertData.messageDevanagari, cardRect.left + 16f * density, cardRect.top + 76f * density, textBodyPaint)
+        canvas.drawText(mode.alertData.titleEnglish, cardRect.left + 16f * density, cardRect.top + 36f * density, textHeaderPaint)
+        canvas.drawText(mode.alertData.messageEnglish, cardRect.left + 16f * density, cardRect.top + 68f * density, textBodyPaint)
     }
 
     private fun drawInterventionModal(canvas: Canvas, mode: OverlayMode.InterventionModal) {
         val density = resources.displayMetrics.density
         val cardRect = RectF(20f * density, height * 0.15f, width - 20f * density, height * 0.85f)
-        canvas.drawRoundRect(cardRect, 20f * density, 20f * density, cardPaint)
-        canvas.drawRoundRect(cardRect, 20f * density, 20f * density, borderPaint)
+        canvas.drawRoundRect(cardRect, 24f * density, 24f * density, cardPaint)
+        canvas.drawRoundRect(cardRect, 24f * density, 24f * density, borderPaint)
 
         // Title
-        canvas.drawText("🛑 ${mode.alertData.titleDevanagari}", cardRect.left + 20f * density, cardRect.top + 48f * density, textHeaderPaint)
+        canvas.drawText(mode.alertData.titleEnglish, cardRect.left + 24f * density, cardRect.top + 52f * density, textHeaderPaint)
 
         // Message
-        canvas.drawText(mode.alertData.messageDevanagari, cardRect.left + 20f * density, cardRect.top + 96f * density, textBodyPaint)
-        canvas.drawText(mode.alertData.messageEnglish, cardRect.left + 20f * density, cardRect.top + 130f * density, textBodyPaint)
+        canvas.drawText(mode.alertData.messageEnglish, cardRect.left + 24f * density, cardRect.top + 96f * density, textBodyPaint)
 
         // 3-Second Hold-to-Dismiss Button (56dp height minimum)
         val btnHeight = 56f * density
@@ -124,7 +123,7 @@ class SaathiOverlayView @JvmOverloads constructor(
             cardRect.right - 20f * density,
             cardRect.bottom - (btnHeight + 24f * density)
         )
-        canvas.drawRoundRect(holdButtonRect, 12f * density, 12f * density, btnHoldPaint)
+        canvas.drawRoundRect(holdButtonRect, 16f * density, 16f * density, btnHoldPaint)
 
         // Hold progress bar
         val holdProgress = if (isHolding) {
@@ -135,21 +134,21 @@ class SaathiOverlayView @JvmOverloads constructor(
         if (holdProgress > 0f) {
             val progressWidth = holdButtonRect.width() * holdProgress
             val progressRect = RectF(holdButtonRect.left, holdButtonRect.top, holdButtonRect.left + progressWidth, holdButtonRect.bottom)
-            canvas.drawRoundRect(progressRect, 12f * density, 12f * density, holdProgressPaint)
+            canvas.drawRoundRect(progressRect, 16f * density, 16f * density, holdProgressPaint)
         }
 
-        val btnLabel = if (holdProgress > 0f) "Hold to unlock: ${(holdProgress * 100).toInt()}%" else "🛡️ समझ गया — 3 सेकंड दबाए रखें"
+        val btnLabel = if (holdProgress > 0f) "Hold to unlock: ${(holdProgress * 100).toInt()}%" else "Hold 3s to Dismiss"
         canvas.drawText(btnLabel, holdButtonRect.centerX(), holdButtonRect.centerY() + 6f * density, btnTextPaint)
 
-        // Call Family Emergency Button
+        // Call Emergency Contact Button
         callFamilyButtonRect = RectF(
             cardRect.left + 20f * density,
             cardRect.bottom - (btnHeight + 12f * density),
             cardRect.right - 20f * density,
             cardRect.bottom - 12f * density
         )
-        canvas.drawRoundRect(callFamilyButtonRect, 12f * density, 12f * density, btnCallFamilyPaint)
-        canvas.drawText("📞 परिवार को कॉल करें (Call Family)", callFamilyButtonRect.centerX(), callFamilyButtonRect.centerY() + 6f * density, btnCallTextPaint)
+        canvas.drawRoundRect(callFamilyButtonRect, 16f * density, 16f * density, btnCallFamilyPaint)
+        canvas.drawText("Call Emergency Contact", callFamilyButtonRect.centerX(), callFamilyButtonRect.centerY() + 6f * density, btnCallTextPaint)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {

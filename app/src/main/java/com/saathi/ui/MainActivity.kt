@@ -28,6 +28,12 @@ import com.saathi.overlay.OverlayManager
 import com.saathi.watchdog.WatchdogService
 import java.util.Locale
 
+/**
+ * Executive user-facing Activity for Saathi.
+ * Pure minimalist dark-mode design with zero clutter, 
+ * clean typography, high-contrast security indicators, 
+ * and natural English voice guidance.
+ */
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private lateinit var tts: TextToSpeech
@@ -43,7 +49,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var cardWhatsAppHelp: View
     private lateinit var cardBillPayHelp: View
     private lateinit var cardTestScamAlert: View
-    private lateinit var btnCallFamily: MaterialButton
+    private lateinit var btnCallFamily: View
 
     private lateinit var overlayManager: OverlayManager
 
@@ -90,7 +96,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         btnVoiceAssistant.setOnClickListener {
             triggerHapticFeedback()
             animateVoiceRipple()
-            speakAloud("नमस्ते! मैं आपका साथी हूँ। आप क्या करना चाहते हैं? मैं आपकी सहायता के लिए तैयार हूँ।")
+            speakAloud("Hello. I am Saathi, your on-device safety guardian. How may I assist you?")
         }
 
         btnEnableSettings.setOnClickListener {
@@ -104,14 +110,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         cardWhatsAppHelp.setOnClickListener {
             triggerHapticFeedback()
-            speakAloud("WhatsApp पर आवाज़ भेजने के लिए, नीचे दाईं ओर दिए गए हरे माइक बटन को दबाकर रखें और बोलें।")
-            Toast.makeText(this, "WhatsApp Voice Guide Activated", Toast.LENGTH_SHORT).show()
+            speakAloud("To record a voice message on WhatsApp, tap and hold the microphone icon in your chat.")
+            Toast.makeText(this, "WhatsApp Voice Guide Active", Toast.LENGTH_SHORT).show()
         }
 
         cardBillPayHelp.setOnClickListener {
             triggerHapticFeedback()
-            speakAloud("PhonePe या Google Pay से बिजली का बिल भरने के लिए 'Bill Pay' चुनें। साथी आपको सुरक्षित रूप से रास्ता दिखाएगा।")
-            Toast.makeText(this, "Bill Pay Guide Activated", Toast.LENGTH_SHORT).show()
+            speakAloud("When making payments, always verify the merchant name and amount before entering your secret PIN.")
+            Toast.makeText(this, "Payment Safety Guide Active", Toast.LENGTH_SHORT).show()
         }
 
         cardTestScamAlert.setOnClickListener {
@@ -125,15 +131,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             val testAlert = ScamAlertData(
                 category = ScamCategory.OTP_THEFT,
                 riskLevel = RiskLevel.HIGH,
-                titleDevanagari = "रुकिए! सावधान (ओटीपी फ्रॉड)",
-                titleEnglish = "STOP: Fraudulent OTP Request",
-                messageDevanagari = "यह स्क्रीन आपसे गुप्त बैंक ओटीपी मांग रही है। किसी को यह कोड कभी न बताएं!",
-                messageEnglish = "Never share your confidential OTP with unverified callers or websites.",
+                titleDevanagari = "Critical Threat: OTP Intercept",
+                titleEnglish = "High Risk: Confidential OTP Request",
+                messageDevanagari = "Never share your confidential OTP or banking password with any caller or website.",
+                messageEnglish = "Never share your confidential OTP or banking password with any caller or website.",
                 triggerSnippet = "OTP: 492018"
             )
 
             overlayManager.showInterventionModal(testAlert) {
-                Toast.makeText(this, "Alert Safely Dismissed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Threat Safely Dismissed", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -151,22 +157,22 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val hasOverlay = Settings.canDrawOverlays(this)
 
         if (hasAccessibility && hasOverlay) {
-            cardProtectionStatus.setCardBackgroundColor(ContextCompat.getColor(this, R.color.saathi_safe_light))
-            cardProtectionStatus.strokeColor = ContextCompat.getColor(this, R.color.saathi_safe)
-            imgStatusIcon.setImageResource(R.drawable.ic_shield_24)
-            imgStatusIcon.setColorFilter(ContextCompat.getColor(this, R.color.saathi_safe))
-            txtStatusTitle.text = getString(R.string.status_active_title)
-            txtStatusTitle.setTextColor(ContextCompat.getColor(this, R.color.saathi_safe_dark))
-            txtStatusSub.text = getString(R.string.status_active_sub)
+            cardProtectionStatus.setCardBackgroundColor(ContextCompat.getColor(this, R.color.saathi_emerald_bg))
+            cardProtectionStatus.strokeColor = ContextCompat.getColor(this, R.color.saathi_emerald_border)
+            imgStatusIcon.setImageResource(R.drawable.ic_shield_emerald)
+            imgStatusIcon.clearColorFilter()
+            txtStatusTitle.text = getString(R.string.status_shield_active)
+            txtStatusTitle.setTextColor(ContextCompat.getColor(this, R.color.saathi_emerald))
+            txtStatusSub.text = getString(R.string.status_shield_active_desc)
             btnEnableSettings.visibility = View.GONE
         } else {
-            cardProtectionStatus.setCardBackgroundColor(ContextCompat.getColor(this, R.color.alert_yellow_card))
-            cardProtectionStatus.strokeColor = ContextCompat.getColor(this, R.color.saathi_primary_dark)
-            imgStatusIcon.setImageResource(R.drawable.ic_warning_24)
-            imgStatusIcon.setColorFilter(ContextCompat.getColor(this, R.color.saathi_primary_dark))
-            txtStatusTitle.text = getString(R.string.status_inactive_title)
-            txtStatusTitle.setTextColor(ContextCompat.getColor(this, R.color.text_dark))
-            txtStatusSub.text = getString(R.string.status_inactive_sub)
+            cardProtectionStatus.setCardBackgroundColor(ContextCompat.getColor(this, R.color.saathi_amber_bg))
+            cardProtectionStatus.strokeColor = ContextCompat.getColor(this, R.color.saathi_amber)
+            imgStatusIcon.setImageResource(R.drawable.ic_alert_triangle)
+            imgStatusIcon.clearColorFilter()
+            txtStatusTitle.text = getString(R.string.status_shield_inactive)
+            txtStatusTitle.setTextColor(ContextCompat.getColor(this, R.color.saathi_amber))
+            txtStatusSub.text = getString(R.string.status_shield_inactive_desc)
             btnEnableSettings.visibility = View.VISIBLE
         }
     }
@@ -185,7 +191,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             startActivity(intent)
         } catch (_: Exception) {
-            Toast.makeText(this, "Unable to open Accessibility settings directly", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Unable to open Accessibility settings", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -199,29 +205,29 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             startActivity(intent)
         } catch (_: Exception) {
-            Toast.makeText(this, "Unable to open overlay permission screen", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Unable to open overlay permission settings", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun triggerHapticFeedback() {
         val vibrator = ContextCompat.getSystemService(this, Vibrator::class.java)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            vibrator?.vibrate(VibrationEffect.createOneShot(45, VibrationEffect.DEFAULT_AMPLITUDE))
+            vibrator?.vibrate(VibrationEffect.createOneShot(35, VibrationEffect.DEFAULT_AMPLITUDE))
         } else {
             @Suppress("DEPRECATION")
-            vibrator?.vibrate(45)
+            vibrator?.vibrate(35)
         }
     }
 
     private fun animateVoiceRipple() {
-        viewVoiceRipple.scaleX = 0.9f
-        viewVoiceRipple.scaleY = 0.9f
+        viewVoiceRipple.scaleX = 0.95f
+        viewVoiceRipple.scaleY = 0.95f
         viewVoiceRipple.alpha = 1.0f
         viewVoiceRipple.animate()
-            .scaleX(1.35f)
-            .scaleY(1.35f)
+            .scaleX(1.4f)
+            .scaleY(1.4f)
             .alpha(0.0f)
-            .setDuration(900)
+            .setDuration(800)
             .start()
     }
 
@@ -232,11 +238,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
-            val result = tts.setLanguage(Locale("hi", "IN"))
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                tts.language = Locale.ENGLISH
-            }
-            tts.setSpeechRate(0.85f)
+            tts.language = Locale.ENGLISH
+            tts.setSpeechRate(0.95f)
             isTtsReady = true
         }
     }

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:background="@color/alert_yellow_card"
+    android:background="@drawable/bg_card_raised"
     android:elevation="8dp"
     android:orientation="vertical"
     android:padding="16dp">
@@ -12,18 +12,18 @@
         android:id="@+id/bannerTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/alert_title_otp_hi"
-        android:textColor="@color/alert_red"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:text="@string/threat_alert_title_otp"
+        android:textColor="@color/saathi_ruby"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium" />
 
     <TextView
         android:id="@+id/bannerMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/alert_msg_otp_hi"
-        android:textColor="@color/text_dark"
-        android:textSize="18sp" />
+        android:layout_marginTop="6dp"
+        android:text="@string/threat_alert_msg_otp"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp" />
 
 </LinearLayout>

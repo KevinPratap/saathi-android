@@ -1,45 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Saathi</string>
-    <string name="accessibility_service_label">Saathi Senior Safety Guardian</string>
-    <string name="accessibility_service_description">Saathi protects elderly users from digital scams and financial fraud in real-time using on-device security checks.</string>
+    <string name="accessibility_service_label">Saathi AI Shield Daemon</string>
+    <string name="accessibility_service_description">Proactive on-device security shield preventing digital fraud and identity theft in real-time.</string>
 
-    <string name="greeting_hi">नमस्ते! मैं साथी हूँ</string>
-    <string name="greeting_sub">आपका सुरक्षित साथी • Always Protecting You</string>
+    <string name="brand_title">Saathi AI</string>
+    <string name="brand_tagline">Autonomous Screen Guardian</string>
     
-    <string name="status_active_title">सुरक्षा पूरी तरह चालू है</string>
-    <string name="status_active_sub">Saathi is actively scanning and protecting your screen</string>
+    <string name="status_shield_active">Shield Active</string>
+    <string name="status_shield_active_desc">Real-time on-device heuristics scanning active window</string>
 
-    <string name="status_inactive_title">साथी की सुरक्षा चालू करें</string>
-    <string name="status_inactive_sub">धोखेबाजों से बचने के लिए 1 बटन दबाकर अनुमति दें</string>
-    <string name="btn_enable_settings">यहाँ दबाएं और साथी चालू करें ➔</string>
+    <string name="status_shield_inactive">Protection Inactive</string>
+    <string name="status_shield_inactive_desc">Enable accessibility permission to activate the security shield</string>
+    <string name="btn_activate_shield">Enable Shield Now ➔</string>
 
-    <string name="voice_tap_prompt_hi">बोलने के लिए यहाँ दबाएं</string>
-    <string name="voice_tap_prompt_en">Tap and speak what you need</string>
+    <string name="voice_prompt_title">Tap to Speak</string>
+    <string name="voice_prompt_subtitle">Ask Saathi to guide your actions or check security</string>
 
-    <string name="quick_help_header">सुझाव • COMMON ASSISTANCE</string>
-    <string name="help_whatsapp_title">WhatsApp पर आवाज़ कैसे भेजें?</string>
-    <string name="help_whatsapp_sub">आवाज़ का संदेश भेजना सीखें (Learn voice notes)</string>
+    <string name="section_guided_workflows">INTELLIGENT WORKFLOWS</string>
+    
+    <string name="guide_whatsapp_title">WhatsApp Voice Note Guide</string>
+    <string name="guide_whatsapp_desc">Interactive pointers to record and send voice messages</string>
 
-    <string name="help_bill_title">बिजली या पानी का बिल कैसे भरें?</string>
-    <string name="help_bill_sub">PhonePe से सुरक्षित बिल भुगतान सीखें</string>
+    <string name="guide_billpay_title">Protected Utility Payments</string>
+    <string name="guide_billpay_desc">Safe guided payment walkthrough for PhonePe &amp; GPay</string>
 
-    <string name="help_test_scam_title">⚠️ फ्रॉड मैसेज रोककर देखें (Test Alert)</string>
-    <string name="help_test_scam_sub">दबाकर देखें कि साथी फ्रॉड को कैसे रोकता है</string>
+    <string name="guide_sim_alert_title">Simulate Threat Alert</string>
+    <string name="guide_sim_alert_desc">Test the 3-second friction barrier and modal warning</string>
 
-    <string name="btn_call_family_large">📞 परिवार को कॉल करें (Call Family)</string>
+    <string name="btn_emergency_call">Emergency Call • Trusted Contact</string>
 
-    <!-- Alert Strings: Hindi & English -->
-    <string name="alert_title_otp_hi">रुकिए! सावधान (ओटीपी खतरा)</string>
-    <string name="alert_title_otp_en">Warning: Secret OTP Request</string>
-    <string name="alert_msg_otp_hi">यह स्क्रीन आपसे आपका बैंक ओटीपी या गुप्त कोड मांग रही है। किसी को यह कोड कभी न बताएं!</string>
-    <string name="alert_msg_otp_en">This screen is requesting your confidential One-Time Password. Never share this code with anyone!</string>
+    <!-- Threat Overlay Warning Strings (English Only) -->
+    <string name="threat_alert_header">CRITICAL THREAT DETECTED</string>
+    <string name="threat_alert_title_otp">High Risk: Confidential OTP Request</string>
+    <string name="threat_alert_msg_otp">This screen is attempting to capture your confidential banking OTP. Legitimate banks and government officials will never demand this verification code over call or chat.</string>
+    
+    <string name="threat_alert_title_bank">High Risk: Phishing / Fake KYC Urgency</string>
+    <string name="threat_alert_msg_bank">An unverified source is threatening immediate account suspension. Do not transfer funds, share credentials, or install external APK packages.</string>
 
-    <string name="alert_title_bank_hi">सावधान: बैंक खाता सस्पेंड चेतावनी</string>
-    <string name="alert_title_bank_en">Warning: Fake Bank/KYC Suspension</string>
-    <string name="alert_msg_bank_hi">धोखेबाज बैंक के नाम पर खाता बंद होने का डर दिखा रहे हैं। किसी अनजान नंबर पर कॉल न करें!</string>
-    <string name="alert_msg_bank_en">Scammers are threatening account suspension. Do not transfer funds or call unverified phone numbers!</string>
-
-    <string name="btn_hold_to_dismiss">🛡️ समझ गया — 3 सेकंड दबाए रखें</string>
-    <string name="btn_call_family">📞 परिवार को कॉल करें</string>
+    <string name="threat_btn_hold_dismiss">Hold for 3s to Dismiss</string>
+    <string name="threat_btn_call_trusted">Call Trusted Contact</string>
 </resources>
