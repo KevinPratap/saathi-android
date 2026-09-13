@@ -19,7 +19,7 @@ object OemIntentHelper {
     }
 
     fun getAutoStartIntent(): Intent? {
-        val manufacturer = Build.MANUFACTURER.lowercase()
+        val manufacturer = Build.MANUFACTURER?.lowercase() ?: ""
         val intent = Intent()
 
         return when {
